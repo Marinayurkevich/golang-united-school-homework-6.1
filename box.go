@@ -23,6 +23,9 @@ func (b *box) AddShape(shape Shape) error {
 	if len(b.shapes) == b.shapesCapacity {
 		return errors.New("goes out of the shapesCapacity range")
 	}
+	b.shapes = append(b.shapes, shape)
+	return nil
+}
 
 // GetByIndex allows getting shape by index
 // whether shape by index doesn't exist or index went out of the range, then it returns an error
